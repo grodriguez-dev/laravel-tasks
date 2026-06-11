@@ -14,6 +14,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -47,10 +48,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
     /**
      * Get all of the tasks for the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function tasks(): HasMany
     {
@@ -59,8 +59,6 @@ class User extends Authenticatable
 
     /**
      * The sharedTasks relationship
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function sharedTasks(): BelongsToMany
     {

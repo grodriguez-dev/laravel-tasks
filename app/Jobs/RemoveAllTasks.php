@@ -12,7 +12,9 @@ use Illuminate\Queue\SerializesModels;
 class RemoveAllTasks implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     public User $user;
+
     /**
      * Create a new job instance.
      */

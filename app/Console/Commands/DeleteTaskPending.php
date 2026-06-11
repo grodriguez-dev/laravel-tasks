@@ -3,14 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Task;
-use App\Models\User;
 use Illuminate\Console\Command;
-
-use function Laravel\Prompts\confirm;
-use function Laravel\Prompts\form;
-use function Laravel\Prompts\info;
-use function Laravel\Prompts\table;
-use function Laravel\Prompts\progress;
 
 class DeleteTaskPending extends Command
 {
@@ -33,9 +26,9 @@ class DeleteTaskPending extends Command
      */
     public function handle()
     {
-        //borrar tareas que el deleted_at es mayor a 5 dias
+        // borrar tareas que el deleted_at es mayor a 5 dias
         Task::where('deleted_at', '!=', null)
-        ->where('deleted_at', '<', now()->subDays(5))
-        ->forceDelete();
+            ->where('deleted_at', '<', now()->subDays(5))
+            ->forceDelete();
     }
 }

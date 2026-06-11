@@ -10,5 +10,3 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote')->hourly();
 
 Schedule::command(DeleteTaskPending::class)->timezone('Europe/Madrid')->everyMinute();
-
-

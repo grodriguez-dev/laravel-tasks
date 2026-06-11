@@ -7,14 +7,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/dashboard');
 
-
-
-Route::get('dashboard',[DashboardController::class,'index'])
+Route::get('dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-
-Route::view('dashboard.nuevo','dashboard.nuevo')
+Route::view('dashboard.nuevo', 'dashboard.nuevo')
     ->middleware(['auth', 'verified'])
     ->name('dashboard.nuevo');
 

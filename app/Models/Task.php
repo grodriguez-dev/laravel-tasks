@@ -21,8 +21,6 @@ class Task extends Model
 
     /**
      * Get the user that owns the Task
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(): BelongsTo
     {
@@ -31,8 +29,6 @@ class Task extends Model
 
     /**
      * The sharedWith that belong to the Task
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function sharedWith(): BelongsToMany
     {
